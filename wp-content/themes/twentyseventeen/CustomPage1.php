@@ -1,6 +1,6 @@
 <?php /* Template Name: CustomPage1 */ ?>
 
-get_header(); ?>
+<?php get_header(); ?>
 
 <div class="wrap">
 	<div id="primary" class="content-area">
