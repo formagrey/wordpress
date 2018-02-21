@@ -53,5 +53,43 @@
     }
     add_action( 'wp_enqueue_scripts', 'theme_styles');
 
+    function register_google_fonts() {
+        wp_register_style( 'googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300');
+        wp_enqueue_style( 'googleFonts');
+    }
+    add_action( 'wp_enqueue_scripts', 'register_google_fonts' );
+
+    function wpb_add_google_fonts(){
+        wp_enqueue_style('wpb-google-fonts', 'http://fonts.googleapis.com/css?familly=Open+Sans:300italic,400italic,700italic,400,700,300', false);
+    }
+    //add_action('wp_enqueue_scripts', 'wpb_add_google_fonts');
+
+    function myprefix_enqueue_google_fonts() {
+        wp_enqueue_style( 'crow beak', 'https://fonts.googleapis.com/css?family=Roboto' );
+    }
+    //add_action( 'wp_enqueue_scripts', 'myprefix_enqueue_google_fonts' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  ?>
