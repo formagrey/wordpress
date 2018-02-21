@@ -81,28 +81,34 @@
                     </div>
                 </div>
             </section>
-            <section id="section5" class="container-fluid">
+
+            <div class="container-fluid color-fond">
                 <div class="container">
                     <div class="row">
-                        <h2 class="col-12">Contact Me</h2>
-                        <?php include 'formulaire.php' ?>
+                        <div id="content" class="col-6">
+                            <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
+                                <div class="post">
+                                    <h2>
+                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                            <?php the_title(); ?>
+                                        </a>
+                                    </h2>
+                                    <div class="post_content">
+                                        <?php the_content(); ?>
+                                    </div>
+                                </div> <?php endwhile; ?>
+                            <?php endif; ?>
+                        </div>
+                        <div class="col-6">
+                            <form method="get" id="searchform" action="<?php bloginfo('index'); ?>/">
+                                <div> <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" />
+                                    <input type="submit" id="searchsubmit" value="Chercher" />
+                                </div>
+                            </form>
+
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            <div id="content">
-                <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
-                    <div class="post">
-                        <h2>
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                <?php the_title(); ?>
-                            </a>
-                        </h2>
-                        <div class="post_content">
-                            <?php the_content(); ?>
-                        </div>
-                    </div> <?php endwhile; ?>
-                <?php endif; ?>
             </div>
     </body>
 </html>

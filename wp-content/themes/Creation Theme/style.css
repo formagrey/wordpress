@@ -6,6 +6,15 @@ Version: 0.0.1
 Tags: bootstrap
 */
 
+.color-fond{
+    background-color: #222222;
+}
+#header h1{
+    font-weight: bolder;
+    font-size: 100px;
+    font-family: 'crow beak';
+    /*font-family: 'Oswald', Helvetica, Arial, serif;*/
+}
 #header {
  background-image: url("images/mac-une.jpg");
  height: 500px;
