@@ -74,7 +74,16 @@
            'menu-principal' => 'Menu principal'
     ) );
 
-
+    add_action( 'admin_menu', 'wpd_admin_menu_item' );
+    function wpd_admin_menu_item(){
+        add_submenu_page(
+            'edit.php',
+            'Page title',
+            'Menu item title',
+            'edit_posts',
+            'edit.php?category_name=somecat'
+        );
+    }
 
 
 
