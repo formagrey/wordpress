@@ -84,32 +84,6 @@ h2 ul, .sidebar ul{
    padding-top: 50px;
 }
 
-#menu-menu-principal-container
-{
-  font-size:18px;
-  font-weight:normal;
-  letter-spacing:6px;
-  display:inline-block;
-}
-
-#menu-menu-principal-container ul
-{
-  margin:0;
-  padding:0;
-  list-style:none;
-}
-
-#menu-menu-principal-container ul li
-{
-  cursor:pointer;
-  padding:5px 8px;
-}
-
-#menu-menu-principal-container ul li:hover
-{
-  background-color:#008ac5;
-  color:gold;
-}
 
 
 /*# sourceMappingURL=style.css.map */
