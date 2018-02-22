@@ -69,7 +69,9 @@
     }
     //add_action( 'wp_enqueue_scripts', 'myprefix_enqueue_google_fonts' );
 
-
+    register_nav_menus( array(
+           'menu-principal' => 'Menu principal'
+    ) );
 
 
 
