@@ -26,13 +26,14 @@
 
 </head>
 <body>
+
     <?php wp_nav_menu(array('theme_location' => 'Top')); ?>
     <section id="header" class="container-fluid">
         <div class="container">
             <div class="row text-center jumbotron">
+
                 <h1 class="col-12 text-center"><?php bloginfo('name'); ?></h1>
                 <?php //bloginfo('description'); ?>
             </div>
         </div>
-
     </section>
