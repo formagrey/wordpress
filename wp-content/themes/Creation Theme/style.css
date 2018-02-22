@@ -5,6 +5,35 @@ Description: Template WordPress d'exemple pour une integration
 Version: 0.0.1
 Tags: bootstrap
 */
+.menu-menu-container{
+    font-size:18px;
+    font-weight:normal;
+    letter-spacing:6px;
+}
+.menu-menu-container ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.menu-menu-container ul li{
+    cursor:pointer;
+    padding:5px 8px;
+}
+.menu-menu-container ul li:hover{
+    background-color:#008ac5;
+    color:gold;
+}
+
+.menu-menu-container{
+    display: inline;
+}
+
+h2 ul, .sidebar ul{
+    list-style: none;
+}
+.size-comics iframe{
+    max-width: 100%;
+}
 
 .color-fond{
     background-color: white;
@@ -27,11 +56,6 @@ Tags: bootstrap
    height: 500px;
    color: white;
    background-color: inherit;
-}
-
-#header h1 {
-     font-weight: bold;
-     font-size: 160px;
 }
 
    section, footer {
