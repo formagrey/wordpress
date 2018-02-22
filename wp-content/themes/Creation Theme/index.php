@@ -24,24 +24,23 @@
                     <div class="row">
                         <h2 class="col-12">ce que je fais</h2>
 
+                        <?php
+                        $query = new WP_Query( array( 'category_name' => 'Comics' ) );
+                        if ( $query->have_posts() ) :
+                            while ( $query->have_posts() ) : $query->the_post();
 
-                            <?php
-                            $query = new WP_Query( array( 'category_name' => 'Comics' ) );
-                            if ( $query->have_posts() ) :
-                                while ( $query->have_posts() ) : $query->the_post();
+                        ?>
+                                <div class="comics col-xs-12 col-md-6 col-lg-4">
+                                    <?php the_title(); the_content(); ?>
+                                </div>
 
-                                    ?>
-                                    <div class="bloc1 col-xs-12 col-md-6 col-lg-4"><?php the_title(); the_content(); ?></div>
-                                        <?php
-                                endwhile;
-                            else :
-                                echo 'No posts';
-                            endif;
-                            ?>
+                        <?php
+                            endwhile;
+                        else :
+                            echo 'No posts';
+                        endif;
+                        ?>
 
-                            
-
-                        </div>
                     </div>
                 </div>
             </section>

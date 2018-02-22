@@ -71,7 +71,7 @@
     //add_action( 'wp_enqueue_scripts', 'myprefix_enqueue_google_fonts' );
 
     register_nav_menus( array(
-           'menu-principal' => 'Menu principal'
+           'Top' => 'Menu principal'
     ) );
 
     add_action( 'admin_menu', 'wpd_admin_menu_item' );
@@ -84,6 +84,8 @@
             'edit.php?category_name=somecat'
         );
     }
+
+
 
 
 
