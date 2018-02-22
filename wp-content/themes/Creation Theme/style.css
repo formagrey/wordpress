@@ -40,8 +40,8 @@ h2 ul, .sidebar ul{
 }
 #header h1{
     font-weight: bolder;
-    font-size: 100px;
-    font-family: 'crow beak';
+    font-size: 80px;
+    font-family: 'Roboto';
     /*font-family: 'Oswald', Helvetica, Arial, serif;*/
 }
 #header {
@@ -76,9 +76,13 @@ h2 ul, .sidebar ul{
  footer {
  margin-top: 100px;
  background-color: grey;
- height: 230px; }
+ min-height: 230px; }
 
  footer i {
    padding-right: 15px;
-   margin-bottom: 50px;
-}/*# sourceMappingURL=style.css.map */
+   padding-bottom: 50px;
+   padding-top: 50px;
+}
+
+
+/*# sourceMappingURL=style.css.map */
