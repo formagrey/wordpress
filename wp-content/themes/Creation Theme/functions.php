@@ -51,7 +51,7 @@
     function theme_styles(){
         wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/librairies/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css' );
         wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/librairies/bootstrap/css/bootstrap.min.css' );
-        wp_enqueue_style( 'style', get_stylesheet_directory_uri() . 'style.css' );
+        wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
     }
     add_action( 'wp_enqueue_scripts', 'theme_styles');
 
@@ -86,9 +86,8 @@
         'Top' => 'Navigation principale',
     ) );
 
-    add_theme_support( 'post-thumbnails' );
 
-
+add_theme_support( 'post-thumbnails' );
 
 
 
