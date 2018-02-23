@@ -1,34 +1,42 @@
 <?php get_header(); ?>
 <!-- ouvrir header,php --->
+            <section id="header" class="container-fluid">
+                <div class="container">
+                    <div class="row text-center jumbotron">
+                        <h1 class="col-12 text-center"><?php bloginfo('name'); ?></h1>
+                        <?php //bloginfo('description'); ?>
+                    </div>
+                </div>
+            </section>
 
             <section id="section2" class="container-fluid">
                 <div class="container">
                     <div class="row">
+                        <?php $query = new WP_Query( array( 'category_name' => 'Présentation' ) ); ?>
+                        <?php if(have_posts()) : while ( $query->have_posts() ) : $query->the_post(); ?>
                         <div class="col-4">
-                            <img src='images/profile.jpg' alt="image de profile" class="img-fluid">
+                            <img class="img-fluid" src="<?php the_field('photo_de_profile'); ?>" alt="">
                         </div>
                         <div class="col-8">
-                            <h2>titre</h2>
-                            <p>s
-                            </p>
-                            <p>
-                                <a href="#">Lien</a>
-                            </p>
+                            <h2><?php the_field('titre_profile'); ?></h2>
+                                <p class="text-justify">
+                                    <?php the_content(); ?>
+                                </p> <?php endwhile; ?>
+                            <?php endif; ?>
                         </div>
-
                     </div>
                 </div>
             </section>
             <section id="section3" class="container-fluid">
                 <div class="container">
                     <div class="row">
-                        <?php $query = new WP_Query( array( 'category_name' => 'competence' ) ); ?>
-                        <h2 class="col-12 text-center"> <?php the_category(); ?></h2>
+                        <?php $query2 = new WP_Query( array( 'category_name' => 'competence' ) ); ?>
+                        <h2 class="col-12">What I Do</h2>
                     </div>
                     <div class="row">
                         <?php
-                            if ( $query->have_posts() ) :
-                                while ( $query->have_posts() ) : $query->the_post(); ?>
+                            if ( $query2->have_posts() ) :
+                                while ( $query2->have_posts() ) : $query2->the_post(); ?>
                                     <div class="col-sm-12 col-md-6 col-lg-4">
                                         <h2> <?php the_title(); ?> </h2>
                                          <div class="size-comics img-fluid">
@@ -47,60 +55,26 @@
                 <div class="container">
                     <div class="row">
                         <h2 class="col-12">Recent Works</h2>
-                        <div class="bloc1 col-xs-12 col-md-6 col-lg-4">
-                            <img src="images/work.jpg" alt="image de travail" class="img-fluid">
-                        </div>
-                        <div class="bloc1 col-xs-12 col-md-6 col-lg-4">
-                            <img src="images/work.jpg" alt="image de travail" class="img-fluid">
-                        </div>
-                        <div class="bloc1 col-xs-12 col-md-6 col-lg-4">
-                            <img src="images/work.jpg" alt="image de travail" class="img-fluid">
-                        </div>
-                        <div class="bloc1 col-xs-12 col-md-6 col-lg-4">
-                            <img src="images/work.jpg" alt="image de travail" class="img-fluid">
-                        </div>
-                        <div class="bloc1 col-xs-12 col-md-6 col-lg-4">
-                            <img src="images/work.jpg" alt="image de travail" class="img-fluid">
-                        </div>
-                        <div class="bloc1 col-xs-12 col-md-6 col-lg-4">
-                            <img src="images/work.jpg" alt="image de travail" class="img-fluid">
-                        </div>
+                        <?php $query = new WP_Query( array( 'category_name' => 'recent_work' ) ); ?>
+                        <?php if(have_posts()) : while ( $query->have_posts() ) : $query->the_post(); ?>
+                        <div class=" col-xs-12 col-md-6 col-lg-4">
+                            <img class="img-fluid card-img-top" src="<?php the_post_thumbnail_url(); ?>" alt="Card image cap">
+                            <div class="card-block">
+                                <h2 class="text-center">
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                        <?php the_title(); ?>
+                                    </a>
+                                </h2>
+                                <div class="post_content text-justify">
+                                    <?php the_content(); ?>
+                                </div>
+                            </div>
+
+                        </div> <?php endwhile; ?>
+                    <?php endif; ?>
                     </div>
                 </div>
             </section>
-
-            <div class="container-fluid color-fond">
-                <div class="container">
-                    <div class="row">
-                        <div id="content" class="col-6">
-                            <?php $query = new WP_Query( array( 'category_name' => 'Comics' ) ); ?>
-                            <?php if(have_posts()) : while ( $query->have_posts() ) : $query->the_post(); ?>
-                                <div class="post">
-                                    <h2>
-                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_title(); ?>
-                                        </a>
-                                        <p class="postmetadata">
-                                            Publié le : <?php the_time('j F Y') ?> par <?php the_author() ?> <br>
-                                            Catégorie: <?php the_category(', ') ?> <br>
-                                            <?php comments_popup_link('Pas de commentaires', '', '% Commentaires'); ?> <br>
-                                            <?php edit_post_link('Editer', '', ''); ?>
-
-                                        </p>
-                                    </h2>
-                                    <div class="post_content">
-                                        <?php the_content(); ?>
-                                    </div>
-                                </div> <?php endwhile; ?>
-                            <?php endif; ?>
-                        </div>
-
-                        <div class="col-6">
-                            <?php get_sidebar(); ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <?php get_footer(); ?>
     </body>
 </html>

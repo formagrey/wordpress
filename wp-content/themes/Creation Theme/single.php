@@ -15,23 +15,17 @@
 	<div class="row">
 		<?php if (have_posts()) : ?>
 			<?php while (have_posts()) : the_post(); ?>
-				<div class="post col-6">
-					<h1 class="post-title"><?php the_title(); ?></h1>
-					<p class="post-info">
-						Posté le <?php the_date(); ?> dans <?php the_category(', '); ?> par <?php the_author(); ?>.
-					</p>
-					<div class="post-content">
+				<div class="col-8 offset-2">
+					<img class="img-fluid card-img-top" src="<?php the_post_thumbnail_url(); ?>" alt="Card image cap">
+				</div>
+				<div class="post col-12">
+					<h1 class="post-title text-center"><?php the_title(); ?></h1>
+					<div class="post-content text-justify">
 						<?php the_content(); ?>
-					</div>
-					<div class="post-comments">
-						<?php comments_template(); ?>
 					</div>
 				</div>
 			<?php endwhile; ?>
 		<?php endif; ?>
-		<div class="col-6">
-			<?php get_sidebar(); ?>
-		</div>
 	</div>
 </div>
 <?php get_footer(); ?>

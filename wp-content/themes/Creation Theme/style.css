@@ -41,8 +41,6 @@ h2 ul, .sidebar ul{
 #header h1{
     font-weight: bolder;
     font-size: 80px;
-    font-family: 'Roboto';
-    /*font-family: 'Oswald', Helvetica, Arial, serif;*/
 }
 #header {
  background-image: url("images/mac-une.jpg");
@@ -61,10 +59,10 @@ h2 ul, .sidebar ul{
    section, footer {
  padding-top: 100px; }
 
- #section4 img {
+ /*#section4 img {
  margin-left: 15px;
  margin-right: 15px;
- margin-top: 30px; }
+ margin-top: 30px; }*/
 
  form {
  padding-top: 50px; }
@@ -82,6 +80,10 @@ h2 ul, .sidebar ul{
    padding-right: 15px;
    padding-bottom: 50px;
    padding-top: 50px;
+}
+.card{
+    margin-bottom: 30px;
+    border: 0px;
 }
 
 
