@@ -5,6 +5,9 @@ Description: Template WordPress d'exemple pour une integration
 Version: 0.0.1
 Tags: bootstrap
 */
+.form-label{
+    margin-right: 10px;
+}
 .menu-menu-container{
     font-size:18px;
     font-weight:normal;
@@ -85,7 +88,9 @@ h2 ul, .sidebar ul{
     margin-bottom: 30px;
     border: 0px;
 }
+.post_content{
 
+}
 
 
 /*# sourceMappingURL=style.css.map */

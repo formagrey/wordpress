@@ -58,18 +58,17 @@
                         <?php $query = new WP_Query( array( 'category_name' => 'recent_work' ) ); ?>
                         <?php if(have_posts()) : while ( $query->have_posts() ) : $query->the_post(); ?>
                         <div class=" col-xs-12 col-md-6 col-lg-4">
-                            <img class="img-fluid card-img-top" src="<?php the_post_thumbnail_url(); ?>" alt="Card image cap">
-                            <div class="card-block">
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <img class="img-fluid card-img-top" src="<?php the_post_thumbnail_url(); ?>" alt="Card image cap">
                                 <h2 class="text-center">
-                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <?php the_title(); ?>
-                                    </a>
+                                    <?php the_title(); ?>
                                 </h2>
+                            </a>
+                            <div class="card-block">
                                 <div class="post_content text-justify">
                                     <?php the_content(); ?>
                                 </div>
                             </div>
-
                         </div> <?php endwhile; ?>
                     <?php endif; ?>
                     </div>
